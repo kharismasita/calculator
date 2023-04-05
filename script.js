@@ -105,8 +105,7 @@ percentage.addEventListener('click', () => {
     calculatePercentage()
 })
 
-const calculatePercentage = () {
+const calculatePercentage = () => {
     let result = parseFloat(currentNumber) / 100
     updateScreen(result)
     }
-}
