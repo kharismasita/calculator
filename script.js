@@ -101,11 +101,14 @@ inputDecimal = (dot) => {
 
 const percentage = document.querySelector('.percentage')
 
-percentage.addEventListener('click', () => {
-    calculatePercentage()
+percentage.addEventListener('click', (event) => {
+    inputPercentage(event.target.value)
+    updateScreen(currentNumber)
 })
 
-const calculatePercentage = () => {
-    let result = parseFloat(currentNumber) / 100
-    updateScreen(result)
+inputPercentage = (percentage) => {
+    if (currentNumber.includes('%')) {
+        result = parseFloat(prevNumber) / 100
     }
+    currentNumber += percentage
+}
